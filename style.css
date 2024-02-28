@@ -102,6 +102,12 @@ label {
   display: flex;
   justify-content: space-between;
 }
+.events {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 .technical,
 .non-technical {
   display: flex;
