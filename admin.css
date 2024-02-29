@@ -86,6 +86,9 @@ a {
   width: 15%;
 }
 .side-menu-ul {
+  /* overflow: scroll; */
+  /* position: relative; */
+  overflow-y: auto;
   width: 100%;
   margin-top: 90px;
   padding: 5px 0;
@@ -105,10 +108,13 @@ a {
   width: 100%;
 }
 .table-container {
+  overflow: auto;
   margin: 10px;
+  height: 75vh;
 }
 .frame-table {
   /* margin: 10px; */
+  overflow: auto;
   width: 100%;
   border-collapse: collapse;
   font-weight: 500;
