@@ -559,15 +559,52 @@
       submitBtn.addEventListener("click", (e) => {
         e.preventDefault();
         let roll_no = document.querySelectorAll(".roll-no");
+        let isValid = true; // Assume the roll number is valid until proven otherwise
         roll_no.forEach((roll) => {
-          console.log(roll.slice(0, 9));
-          if (roll.value.slice(0, 9).toLowerCase() === "2023pecit") {
-            return true;
-          } else {
-            alert("Incorrect Roll No Format");
+          if (roll.value.slice(0, 9).toLowerCase() !== "2023pecit") {
+            isValid = false; // If any roll number doesn't match the format, set isValid to false
           }
+          console.log("right format");
         });
+        if (!isValid) {
+          alert("Incorrect Roll No Format");
+        }
       });
+
+      // let selectedEvents = [];
+
+      // if(checkedRadio){
+      //   if(checkedRadio.length>2){
+      //     radioBtns.forEach((Btn) => {
+      //           radioBtns.forEach((button) => {
+      //             button.checked = false;
+      //             alert('Maximum Allowed Events is 2')
+      //           })
+      //         });
+      //     // });
+      //   }
+      // }
+      let radioBtns = document.querySelectorAll("input[type='radio']");
+
+      radioBtns.forEach((Btn) => {
+        Btn.addEventListener("click", check_radio);
+      });
+
+      function check_radio() {
+        let checkedRadio = document.querySelectorAll(
+          "input[type='radio']:checked"
+        );
+        console.log("checked radio ", checkedRadio);
+        if (checkedRadio) {
+          if (checkedRadio.length > 2) {
+            checkedRadio.forEach((button) => {
+              button.checked = false;
+              console.log(button);
+            });
+            alert("Maximum Allowed Events is 2");
+          }
+        }
+      }
     </script>
   </body>
 </html>
