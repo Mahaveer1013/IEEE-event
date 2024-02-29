@@ -86,7 +86,8 @@ main {
 }
 input[type="text"] {
   width: 38vw;
-  padding: 8px;
+  border-radius: 2px;
+  padding: 10px;
   transition: 0.4s;
   border: none;
 }
@@ -145,6 +146,7 @@ label {
 }
 .radio {
   color: #d8b106;
+  cursor: pointer;
 }
 .submit-div {
   width: 100%;
@@ -159,6 +161,7 @@ label {
   background-color: #d8b106;
   color: #202020;
   border: none;
+  cursor: pointer;
   transition: 0.3s;
   font-size: 20px;
   font-weight: bolder;
@@ -170,16 +173,42 @@ label {
 .popup {
   position: fixed;
   top: 50%;
-  box-shadow: 10px 10px 10px 10px #202020;
+  animation: 0.3s pop-up ease-in forwards;
+  box-shadow: 0 0 10px 10px #202020;
   backdrop-filter: blur(5px);
   left: 50%;
   z-index: 10;
   translate: -50% -50%;
-  width: 500px;
-  /* height: 500px; */
+  width: 510px;
   height: auto;
-  background-color: #fff;
+  background-color: #ffffffc5;
   border-radius: 10px;
+}
+
+@keyframes pop-up {
+  0% {
+    /* position: relative; */
+    margin-top: 100px;
+    opacity: 0;
+  }
+
+  100% {
+    /* position: fixed; */
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  box-shadow: 0 0 5px 5px #202020;
+  /* align-items: center; */
+  background-color: rgba(0, 0, 0, 0.919);
+  color: #d8b106;
+  padding: 15px 30px;
+  border-radius: 8px;
 }
 .popup-span,
 .popup-description,
@@ -199,7 +228,7 @@ label {
   margin: 10px 0 10px 0;
   font-size: 2vw;
   font-weight: 800;
-  color: #202020;
+  color: rgb(174, 51, 20);
 }
 .popup-main {
   position: relative;
@@ -229,6 +258,15 @@ label {
   padding-top: 10px;
   font-size: 20px;
 }
+.active {
+  filter: blur(5px);
+}
+/* .popup-open {
+  overflow: hidden;
+  position: absolute; 
+  width: calc(100% - 20px);
+  padding-right: 20px;
+} */
 @media all and (max-width: 430px) {
   .note--span {
     font-size: 26px;
@@ -283,9 +321,9 @@ label {
   input[type="text"] {
     width: 90%;
   }
-  .popup{
+  .popup {
     width: 300px;
-    height: auto; 
+    height: auto;
   }
   .popup-span,
   .popup-description,
