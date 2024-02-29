@@ -301,7 +301,7 @@ label {
     display: flex;
     align-items: center;
   }
-  .label {
+  label {
     font-size: 16px;
     align-self: flex-start;
     padding-left: 10px;
