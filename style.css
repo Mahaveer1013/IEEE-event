@@ -267,6 +267,11 @@ label {
 .active {
   filter: blur(5px);
 }
+.selects label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 /* .popup-open {
   overflow: hidden;
   position: absolute; 
@@ -296,7 +301,7 @@ label {
     display: flex;
     align-items: center;
   }
-  label {
+  .label {
     font-size: 16px;
     align-self: flex-start;
     padding-left: 10px;
