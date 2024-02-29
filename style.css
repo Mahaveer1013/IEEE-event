@@ -85,7 +85,8 @@ main {
 .container {
   margin: 50px;
 }
-input[type="text"],input[type='email'] {
+input[type="text"],
+input[type="email"] {
   width: 38vw;
   border-radius: 2px;
   padding: 10px;
@@ -95,6 +96,9 @@ input[type="text"],input[type='email'] {
 input:hover {
   transform: scale(1.02);
   /* border: 1px solid #d8b106; */
+}
+.ruppees {
+  color: #d8b106 !important;
 }
 label {
   color: white;
