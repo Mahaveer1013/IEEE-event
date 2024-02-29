@@ -1,132 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
-    <link rel="stylesheet" href="admin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" />
-</head>
-<body>
+    <link rel="stylesheet" href="admin.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <div class="main">
-        <div class="header">
-            <div class="logo">
-                <img class="logo-img" src="https://th.bing.com/th/id/OIP.g2uV0K9d5IC3XylP4A48jwHaHa?rs=1&pid=ImgDetMain">
-            </div>
-            <div class="header-title">
-                Optiverve
-            </div>
-            <div class="logout-div">
-                <a href="#">Logout</a>
-            </div>
+      <div class="header">
+        <div class="logo">
+          <img
+            class="logo-img"
+            src="https://th.bing.com/th/id/OIP.g2uV0K9d5IC3XylP4A48jwHaHa?rs=1&pid=ImgDetMain"
+          />
         </div>
-        <div class="container">
-            <div class="side-menu">
-                <ul class="side-menu-ul">
-                    <li class="side-menu-li">Event 1</li>
-                    <li class="side-menu-li">Event 2</li>
-                    <li class="side-menu-li">Event 3</li>
-                    <li class="side-menu-li">Event 4</li>
-                    <li class="side-menu-li">Event 5</li>
-                    <li class="side-menu-li">Event 6</li>
-                </ul>
-            </div>
-            <section index="1">
-                <div class="frame">
-                    <div class="event-name">Event name</div>
-                    <div class="download-btn"><i class="fas fa-download"></i></div>
-                </div>
-                <div class="table-container">
-                    <table class="frame-table">
-                        <tr>
-                        <th>Sno</th>
-                        <th>Lead name</th>
-                        <th>Member name</th>
-                        <th>Lead roll no</th>
-                        <th>Member roll no</th>
-                        <th>Lead Section</th>
-                        <th>Member Section</th>
-                        <th>Lead Email</th>
-                        <th>Member email</th>
-                        <th>Event name</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Lead name</td>
-                        <td>Member name</td>
-                        <td>Lead roll no</td>
-                        <td>Member roll no</td>
-                        <td>Lead Section</td>
-                        <td>Member Section</td>
-                        <td>Lead Email</td>
-                        <td>Member email</td>
-                        <td>Event name</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Lead name</td>
-                        <td>Member name</td>
-                        <td>Lead roll no</td>
-                        <td>Member roll no</td>
-                        <td>Lead Section</td>
-                        <td>Member Section</td>
-                        <td>Lead Email</td>
-                        <td>Member email</td>
-                        <td>Event name</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Lead name</td>
-                        <td>Member name</td>
-                        <td>Lead roll no</td>
-                        <td>Member roll no</td>
-                        <td>Lead Section</td>
-                        <td>Member Section</td>
-                        <td>Lead Email</td>
-                        <td>Member email</td>
-                        <td>Event name</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Lead name</td>
-                        <td>Member name</td>
-                        <td>Lead roll no</td>
-                        <td>Member roll no</td>
-                        <td>Lead Section</td>
-                        <td>Member Section</td>
-                        <td>Lead Email</td>
-                        <td>Member email</td>
-                        <td>Event name</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Lead name</td>
-                        <td>Member name</td>
-                        <td>Lead roll no</td>
-                        <td>Member roll no</td>
-                        <td>Lead Section</td>
-                        <td>Member Section</td>
-                        <td>Lead Email</td>
-                        <td>Member email</td>
-                        <td>Event name</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Lead name</td>
-                        <td>Member name</td>
-                        <td>Lead roll no</td>
-                        <td>Member roll no</td>
-                        <td>Lead Section</td>
-                        <td>Member Section</td>
-                        <td>Lead Email</td>
-                        <td>Member email</td>
-                        <td>Event name</td>
-                    </tr>
-
-                    </table>
-                </div>
-            </section>
+        <div class="header-title">Optiverve</div>
+        <div class="logout-div">
+          <a href="#">Logout</a>
         </div>
+      </div>
+      <div class="container">
+        <div class="side-menu">
+          <ul class="side-menu-ul">
+            <li class="side-menu-li" index="1"><a class="side-menu-li" index="1">Create Event</a></li>
+            <li class="side-menu-li" index="2"><a class="side-menu-li" index="1">Show Events</a></li>
+            <li class="side-menu-li" index="3"><a class="side-menu-li" index="1">Add Event Details</a></li>
+          </ul>
+        </div>
+        <section index="1">
+          <div class="frame">
+            <div class="event-name">
+              <input type="search" name="search" id="search" />
+              by Event Name
+            </div>
+            <div class="download-btn" onclick="downloadTableAsExcel()">
+              <i class="fas fa-download"></i>
+            </div>
+          </div>
+          <div class="table-container">
+            <table class="frame-table" index="1">
+              <tr>
+                <th>Sno</th>
+                <th>Lead name</th>
+                <th>Member name</th>
+                <th>Lead roll no</th>
+                <th>Member roll no</th>
+                <th>Lead Section</th>
+                <th>Member Section</th>
+                <th>Lead Email</th>
+                <th>Member email</th>
+                <th>Event name</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Lead name</td>
+                <td>Member name</td>
+                <td>Lead roll no</td>
+                <td>Member roll no</td>
+                <td>Lead Section</td>
+                <td>Member Section</td>
+                <td>Lead Email</td>
+                <td>Member email</td>
+                <td class="eventName">Event</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Lead name</td>
+                <td>Member name</td>
+                <td>Lead roll no</td>
+                <td>Member roll no</td>
+                <td>Lead Section</td>
+                <td>Member Section</td>
+                <td>Lead Email</td>
+                <td>Member email</td>
+                <td class="eventName">Event name</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Lead name</td>
+                <td>Member name</td>
+                <td>Lead roll no</td>
+                <td>Member roll no</td>
+                <td>Lead Section</td>
+                <td>Member Section</td>
+                <td>Lead Email</td>
+                <td>Member email</td>
+                <td class="eventName">Event</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Lead name</td>
+                <td>Member name</td>
+                <td>Lead roll no</td>
+                <td>Member roll no</td>
+                <td>Lead Section</td>
+                <td>Member Section</td>
+                <td>Lead Email</td>
+                <td>Member email</td>
+                <td class="eventName">Event name</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Lead name</td>
+                <td>Member name</td>
+                <td>Lead roll no</td>
+                <td>Member roll no</td>
+                <td>Lead Section</td>
+                <td>Member Section</td>
+                <td>Lead Email</td>
+                <td>Member email</td>
+                <td class="eventName">Event</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Lead name</td>
+                <td>Member name</td>
+                <td>Lead roll no</td>
+                <td>Member roll no</td>
+                <td>Lead Section</td>
+                <td>Member Section</td>
+                <td>Lead Email</td>
+                <td>Member email</td>
+                <td class="eventName">Event name</td>
+              </tr>
+            </table>
+            <table class="frame-table" index="2">
+              <tr>
+                <th>Sno</th>
+                <th>Lead</th>
+                <th>Member name</th>
+                <th>Lead roll no</th>
+                <th>Member roll no</th>
+                <th>Lead Section</th>
+                <th>Member Section</th>
+                <th>Lead Email</th>
+                <th>Member email</th>
+                <th>Event name</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Lead name</td>
+                <td>Member name</td>
+                <td>Lead roll no</td>
+                <td>Member roll no</td>
+                <td>Lead Section</td>
+                <td>Member Section</td>
+                <td>Lead Email</td>
+                <td>Member email</td>
+                <td class="eventName">Event</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Lead name</td>
+                <td>Member name</td>
+                <td>Lead roll no</td>
+                <td>Member roll no</td>
+                <td>Lead Section</td>
+                <td>Member Section</td>
+                <td>Lead Email</td>
+                <td>Member email</td>
+                <td class="eventName">Event name</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Lead name</td>
+                <td>Member name</td>
+                <td>Lead roll no</td>
+                <td>Member roll no</td>
+                <td>Lead Section</td>
+                <td>Member Section</td>
+                <td>Lead Email</td>
+                <td>Member email</td>
+                <td class="eventName">Event</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Lead name</td>
+                <td>Member name</td>
+                <td>Lead roll no</td>
+                <td>Member roll no</td>
+                <td>Lead Section</td>
+                <td>Member Section</td>
+                <td>Lead Email</td>
+                <td>Member email</td>
+                <td class="eventName">Event name</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Lead name</td>
+                <td>Member name</td>
+                <td>Lead roll no</td>
+                <td>Member roll no</td>
+                <td>Lead Section</td>
+                <td>Member Section</td>
+                <td>Lead Email</td>
+                <td>Member email</td>
+                <td class="eventName">Event</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Lead name</td>
+                <td>Member name</td>
+                <td>Lead roll no</td>
+                <td>Member roll no</td>
+                <td>Lead Section</td>
+                <td>Member Section</td>
+                <td>Lead Email</td>
+                <td>Member email</td>
+                <td class="eventName">Event name</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+      </div>
     </div>
-</body>
+
+    <script>
+      function downloadTableAsExcel() {
+        var table = document.querySelector(".frame-table");
+        var rows = table.querySelectorAll("tr");
+        var csvContent = "data:text/csv;charset=utf-8,";
+
+        rows.forEach(function (row) {
+          var rowData = [];
+          var cols = row.querySelectorAll("td, th");
+          cols.forEach(function (col) {
+            rowData.push(col.innerText);
+          });
+          csvContent += rowData.join(",") + "\n";
+        });
+
+        var encodedUri = encodeURI(csvContent);
+        var link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "table_data.csv");
+        document.body.appendChild(link);
+
+        link.click(); // This will download the data file named "table_data.csv".
+      }
+
+      // Call the function to download the table as Excel
+      // downloadTableAsExcel();
+    </script>
+    <script src="admin.js"></script>
+  </body>
 </html>
