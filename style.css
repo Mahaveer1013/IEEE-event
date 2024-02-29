@@ -24,7 +24,8 @@ header {
 }
 main {
   margin: 50px;
-  max-width: 1200px;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 .description {
   /* display: flex; */
@@ -113,6 +114,7 @@ label {
   font-size: 15px;
   margin-left: 10px;
   color: aqua;
+  cursor: pointer;
   transition: 0.5s;
 }
 .pop-up :hover {
@@ -170,19 +172,22 @@ label {
 .submit-btn:hover {
   transform: scale(1.1);
 }
+
 .popup {
   position: fixed;
-  top: 50%;
+  top: 0px;
   animation: 0.3s pop-up ease-in forwards;
   box-shadow: 0 0 10px 10px #202020;
   backdrop-filter: blur(5px);
-  left: 50%;
+  /* left: 50%; */
   z-index: 10;
-  translate: -50% -50%;
+  /* translate: -50% -50%; */
   width: 510px;
-  height: auto;
+  max-height: 100vh;
+  overflow-y: scroll;
   background-color: #ffffffc5;
   border-radius: 10px;
+  padding: 20px 0;
 }
 
 @keyframes pop-up {
@@ -241,9 +246,10 @@ label {
   height: auto;
 }
 .close {
-  position: absolute;
+  position: fixed;
   right: 10px;
   top: 10px;
+  cursor: pointer;
   color: #202020;
   border-radius: 100%;
   width: 30px;
@@ -322,8 +328,7 @@ label {
     width: 90%;
   }
   .popup {
-    width: 300px;
-    height: auto;
+    width: calc(100vw - 30px);
   }
   .popup-span,
   .popup-description,

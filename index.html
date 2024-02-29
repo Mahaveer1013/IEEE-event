@@ -266,7 +266,7 @@
       </header>
 
       <div class="container">
-        <form>
+        <form method="post">
           <div class="input-fields">
             <div class="tl-fields">
               <div class="tl-name-div input">
@@ -280,20 +280,6 @@
                   required
                 />
               </div>
-              <div class="tl-roll-div input">
-                <label
-                  >Enter Team Leader Roll no
-                  <span class="require">*</span></label
-                >
-                <input
-                  type="text"
-                  class="tl-roll"
-                  placeholder="Team Leader Roll no"
-                  required
-                />
-              </div>
-            </div>
-            <div class="tm-fields">
               <div class="tm-name-div input">
                 <label
                   >Enter Team Member Name <span class="require">*</span></label
@@ -305,6 +291,21 @@
                   required
                 />
               </div>
+            </div>
+            <div class="tm-fields">
+              
+              <div class="tl-roll-div input">
+                <label
+                  >Enter Team Leader Roll no
+                  <span class="require">*</span></label
+                >
+                <input
+                  type="text"
+                  class="tl-roll roll-no"
+                  placeholder="Team Leader Roll no"
+                  required
+                />
+              </div>
               <div class="tm-roll-div input">
                 <label
                   >Enter Team Member Roll no
@@ -312,8 +313,62 @@
                 >
                 <input
                   type="text"
-                  class="tm-roll"
+                  class="tm-roll roll-no"
                   placeholder="Team Member roll no"
+                  required
+                />
+              </div>
+            </div>
+            <div class="tm-fields">
+              
+              <div class="tl-roll-div input">
+                <label
+                  >Enter Team Leader Class
+                  <span class="require">*</span></label
+                >
+                <input
+                  type="text"
+                  class="tl-roll class"
+                  placeholder="Team Leader Class"
+                  required
+                />
+              </div>
+              <div class="tm-roll-div input">
+                <label
+                  >Enter Team Member Class
+                  <span class="require">*</span></label
+                >
+                <input
+                  type="text"
+                  class="tm-roll class"
+                  placeholder="Team Member Class"
+                  required
+                />
+              </div>
+            </div>
+            <div class="tm-fields">
+              
+              <div class="tl-roll-div input">
+                <label
+                  >Enter Team Leader Section
+                  <span class="require">*</span></label
+                >
+                <input
+                  type="text"
+                  class="tl-roll class"
+                  placeholder="Team Leader Class"
+                  required
+                />
+              </div>
+              <div class="tm-roll-div input">
+                <label
+                  >Enter Team Member Section
+                  <span class="require">*</span></label
+                >
+                <input
+                  type="text"
+                  class="tm-roll class"
+                  placeholder="Team Member Class"
                   required
                 />
               </div>
@@ -330,7 +385,7 @@
                       name="third"
                     />
                     <label
-                      >Tech Auction
+                      >Tech Auction [3]
                       <span class="pop-up action-menu" index="1"
                         ><i class="fas fa-eye"></i></span
                     ></label>
@@ -343,7 +398,7 @@
                       name="third"
                     />
                     <label
-                      >Code Story
+                      >Code Story [3]
                       <span class="pop-up action-menu" index="2"
                         ><i class="fas fa-eye"></i></span
                     ></label>
@@ -356,7 +411,7 @@
                       name="second"
                     />
                     <label
-                      >Killer Sudoku
+                      >Killer Sudoku [2]
                       <span class="pop-up action-menu" index="3"
                         ><i class="fas fa-eye"></i></span
                     ></label>
@@ -369,7 +424,7 @@
                       name="first"
                     />
                     <label
-                      >Webify
+                      >Webify [1]
                       <span class="pop-up action-menu" index="4"
                         ><i class="fas fa-eye"></i></span
                     ></label>
@@ -388,7 +443,7 @@
                       name="first"
                     />
                     <label
-                      >Pictionary
+                      >Pictionary [1]
                       <span class="pop-up action-menu" index="5"
                         ><i class="fas fa-eye"></i></span
                     ></label>
@@ -401,7 +456,7 @@
                       name="second"
                     />
                     <label
-                      >Cine Quiz Catch
+                      >Cine Quiz Catch [2]
                       <span class="pop-up action-menu" index="6"
                         ><i class="fas fa-eye"></i></span
                     ></label>
@@ -414,7 +469,7 @@
                       name="first"
                     />
                     <label
-                      >Crime Scene
+                      >Crime Scene [1]
                       <span class="pop-up action-menu" index="7"
                         ><i class="fas fa-eye"></i></span
                     ></label>
@@ -427,7 +482,7 @@
                       name="fourth"
                     />
                     <label
-                      >Accelerizen
+                      >Accelerizen [4]
                       <span class="pop-up action-menu" index="8"
                         ><i class="fas fa-eye"></i></span
                     ></label>
@@ -437,7 +492,7 @@
             </div>
 
             <div class="submit-div">
-              <input type="submit" class="submit-btn" />
+              <input type="submit" class="submit-btn"/>
             </div>
           </div>
         </form>
@@ -472,7 +527,7 @@
         all_pages.forEach((page) => {
           let pageIndex = page.getAttribute("index");
           if (index == pageIndex) {
-            page.style.display = "flex";
+            page.style.display = "block";
           } else {
             page.style.display = "none";
           }
@@ -480,6 +535,21 @@
           body.classList.add("popup-open");
         });
       }
+
+      let submitBtn=document.querySelector('.submit-btn');
+      submitBtn.addEventListener('click',(e) => {
+        e.preventDefault();
+        let roll_no=document.querySelectorAll('.roll-no');
+        roll_no.forEach((roll)=>{
+          console.log((roll.slice(0,9)))
+          if(roll.value.slice(0,9).toLowerCase()==='2023pecit'){
+            return true
+          }else{
+            alert('Incorrect Roll No Format')
+          }
+        })
+      });
+
     </script>
   </body>
 </html>
